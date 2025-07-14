@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main - Jordan's Financial Guide</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main – Jordan’s Financial Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!--NavBar-->
-    <nav class="sticky-nav">
-        <ul>
-          <li><a href="theBasics.html">The Basics</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-      </nav>
-        <!-- Welcome Section -->
+  <!-- Navigation -->
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="theBasics.html">The Basics</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Section -->
   <header class="hero">
-    <span class="site-name">Jordan’s Financial Guide</span>
-    <h1 class="hero-title">Financial knowledge, demystified</h1>
-    <p class="hero-subtitle">Start with the basics, read what's new, or learn more about me</p>
+    <div class="hero-content">
+      <span class="site-name">Jordan’s Financial Guide</span>
+      <h1 class="hero-title">Financial knowledge, demystified</h1>
+      <p class="hero-subtitle">Explore foundational concepts, read what's new, or learn more about me</p>
+    </div>
   </header>
 
-  <!-- We'll build more sections below -->
-<main>
-  <section class="section-wrapper fade-in-element">
-    <div class="section-text">
-      <h2>The Basics</h2>
-      <p>
-        Just starting out? The Basics breaks down core money concepts like budgeting, saving, tax-advantaged accounts, and common pitfalls — in plain language.
-      </p>
-      <a href="theBasics.html" class="hero-button">Start Learning</a>
-    </div>
-    <div class="section-graphic">
-      <img src="images/guy-being-smart-with-money.svg" alt="financial planning illustration" class="section-image fade-in-element" loading="lazy" />
-    </div>
-  </section>  
-  <section id="blog-preview" class="section-wrapper fade-in-element">
-    <div class="section-text">
-      <h2>Recent Blog Posts</h2>
-      <div id="recent-posts"></div>
-      <a href="blog.html" class="hero-button" style="margin-top: 1rem;">Go to Blog</a>
-    </div>
-  </section>
-</main>
+  <!-- Grid Feature Section -->
+  <main>
+    <section class="feature-grid">
+      <div class="feature-tile fade-in-element">
+        <h2>The Basics</h2>
+        <p>Just starting out? Learn budgeting, saving, and tax-advantaged accounts in plain English.</p>
+        <a href="theBasics.html" class="hero-button">Start Learning</a>
+      </div>
+      <div class="feature-tile fade-in-element">
+        <h2>Recent Blog Posts</h2>
+        <div id="recent-posts"></div>
+        <a href="blog.html" class="hero-button" style="margin-top: 1rem;">Go to Blog</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jordan Lopez. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

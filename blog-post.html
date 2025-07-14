@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog – Jordan’s Financial Guide</title>
+  <title>Blog Post – Jordan’s Financial Guide</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -11,23 +11,19 @@
   <nav class="sticky-nav">
     <ul>
       <li><a href="main.html">Home</a></li>
-      <li><a href="theBasics.html">The Basics</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="about.html">About Me</a></li>
     </ul>
   </nav>
 
-  <header class="hero blog-hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Jordan’s Blog</h1>
-      <p class="hero-subtitle">Insights, Lessons, and Money Moves</p>
-      <button id="newPostBtn" class="hero-button" style="display: none;">New Post</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="blog-grid" id="blog-posts">
-      <!-- Posts will be loaded here -->
-    </section>
+  <main class="post-container">
+    <article id="post-content" class="fade-in-element">
+      <h1 id="post-title" data-editable></h1>
+      <p id="post-snippet" data-editable></p>
+      <div id="post-body" data-editable>
+        <p>Start writing your post content here...</p>
+      </div>
+    </article>
   </main>
 
   <footer>

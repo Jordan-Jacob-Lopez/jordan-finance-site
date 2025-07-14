@@ -7,25 +7,17 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-        <nav class="top-nav">
-            <div class="nav-left">
-            <a href="index.html" class="home-link">Jordan’s Financial Guide</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <div class="bar top"></div>
-                <div class="bar middle"></div>
-                <div class="bar bottom"></div>
-              </div>
-        <div class="nav-right" id="navLinks">
-          <a href="#financial-literacy" class="spy-link">Financial Literacy</a>
-          <a href="#good-financial-topics" class="spy-link">Good Ideas</a>
-          <a href="#dumb-financial-moves" class="spy-link">Terrible Ideas</a>
-          <a href="#retirement-hacks" class="spy-link">Tax-Advantaged</a>
-          <a href="#making-money-early" class="spy-link">Making Money Early</a>
-          <a href="#investing-in-markets" class="spy-link">Markets</a>
-          <a href="#about" class="spy-link">Who's behind this?</a>
-        </div>
-      </nav>
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#financial-literacy" class="spy-link">Financial Literacy</a></li>
+      <li><a href="#good-financial-topics" class="spy-link">Good Ideas</a></li>
+      <li><a href="#dumb-financial-moves" class="spy-link">Terrible Ideas</a></li>
+      <li><a href="#retirement-hacks" class="spy-link">Tax-Advantaged</a></li>
+      <li><a href="#making-money-early" class="spy-link">Making Money Early</a></li>
+      <li><a href="#investing-in-markets" class="spy-link">Markets</a></li>
+    </ul>
+  </nav>
       <div class="nav-backdrop" id="navBackdrop"></div>
   <header>
     <h1>The Basics</h1>
@@ -64,7 +56,7 @@
 
       </section>
       
-     <section id="good-financial-topics" class="section-wrapper fade-in-element">
+     <section id="good-financial-topics" class="section-wrapper fade-in-element reverse">
         <div class="section-text">
           <h2>Some Generally Smart Things You Should Do</h2>
           <p>Financial literacy is your ability to understand and use money-related skills like budgeting, saving, investing, and managing debt.
@@ -74,13 +66,12 @@
             here are the things I would begin learning more about
             </p>
             <ul>
-                <br>
                 <li>Understanding your financial habits - where does your money go each paycheck</li>
-                <br>
+                
                 <li>Creating some objective goals for getting to a better financial version of yourself</li>
-                <br>
+                
                 <li>Paying off high interest debt</li>
-                <br>
+                
                 <li>Understanding the different ways to save money</li>
             </ul>
         </div>
@@ -102,13 +93,13 @@
             Here are some horrendously bad ideas that should be avoided like the plague ranked subjectively from <strong>BAD</strong> to <strong>WORST</strong>.</p>
 
             <ul>
-                <br>
+                
                 <li>Not paying off your credit cards each month</li>
-                <br>
+                
                 <li>Utilizing leverage without any understanding or safe guards in place</li>
-                <br>
+                
                 <li>Investing in a financial instrument without having a single clue of the underlying asset</li>
-                <br>
+                
                 <li>Jumping into debt without recognizing a plan to payoff the debt</li>
             </ul>
         </div>
@@ -119,7 +110,7 @@
 
     </section>
 
-    <section id="retirement-hacks" class="section-wrapper fade-in-element">
+    <section id="retirement-hacks" class="section-wrapper fade-in-element reverse">
         <div class="section-text">
           <h2>Tax-Advantaged Accounts: One of the biggest financial hacks that will elevate your financial health</h2>
           <p>
@@ -129,12 +120,12 @@
             <br>
             <ul>
                 <li>Individual Retirement Accounts (Traditional IRAs and Roth IRAs)</li>
-                <br>
+                
                 <li>Employer sponsored plans (Traditional or Roth 401(k), 403(b), 457(b))</li>
-                <br>
+                
                 <li>Other savings accounts (Health, Education, etc.)</li>
             </ul>
-            <br>
+            
         </p>
 
             <p>
@@ -167,9 +158,9 @@
           <br>
           <ul>
             <li>If you are making around $100,000 a year and manage to save $20,000 of it annually…</li>
-            <br>
+            
             <li>And you consistently invest that $20,000 into a portfolio earning 6%…</li>
-            <br>
+            
             <li>You’ll hit $1 million in about 25 years.</li>
           </ul>
           <br>
@@ -184,21 +175,17 @@
             Additionally, <strong>Making money early matters not because you need to be rich by 30 </strong> — but because time is your greatest asset, and money made young has the most time to grow.
           </p>
         </div>
+
         <div class="section-graphic">
-            <video 
-              class="animated-chart" 
-              src="videos/investment_growth_animation.mp4" 
-              autoplay 
-              muted 
-              playsinline 
-              loop>
-              Your browser does not support the video tag.
-            </video>
+          <video autoplay muted loop playsinline>
+            <source src="videos/investment_growth_animation.mp4"  type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
     </section>
 
 
-    <section id="investing-in-markets" class="section-wrapper fade-in-element">
+    <section id="investing-in-markets" class="section-wrapper fade-in-element reverse">
         <div class="section-text">
           <h2>Markets Can Be Crazy. Don’t Be Stupid.</h2>
           <p>Pretty self explanatory... Stick to some basic ideas and not only will you be saving money, but you will also be passively receiving interest.
