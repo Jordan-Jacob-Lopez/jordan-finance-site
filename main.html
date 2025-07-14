@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main - Jordan's Financial Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--NavBar-->
+    <nav class="sticky-nav">
+        <ul>
+          <li><a href="theBasics.html">The Basics</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+      </nav>
+        <!-- Welcome Section -->
+  <header class="hero">
+    <span class="site-name">Jordan’s Financial Guide</span>
+    <h1 class="hero-title">Financial knowledge, demystified</h1>
+    <p class="hero-subtitle">Start with the basics, read what's new, or learn more about me</p>
+  </header>
+
+  <!-- We'll build more sections below -->
+<main>
+  <section class="section-wrapper fade-in-element">
+    <div class="section-text">
+      <h2>The Basics</h2>
+      <p>
+        Just starting out? The Basics breaks down core money concepts like budgeting, saving, tax-advantaged accounts, and common pitfalls — in plain language.
+      </p>
+      <a href="theBasics.html" class="hero-button">Start Learning</a>
+    </div>
+    <div class="section-graphic">
+      <img src="images/guy-being-smart-with-money.svg" alt="financial planning illustration" class="section-image fade-in-element" loading="lazy" />
+    </div>
+  </section>  
+  <section id="blog-preview" class="section-wrapper fade-in-element">
+    <div class="section-text">
+      <h2>Recent Blog Posts</h2>
+      <div id="recent-posts"></div>
+      <a href="blog.html" class="hero-button" style="margin-top: 1rem;">Go to Blog</a>
+    </div>
+  </section>
+</main>
+
+  <script src="script.js"></script>
+</body>
+</html>

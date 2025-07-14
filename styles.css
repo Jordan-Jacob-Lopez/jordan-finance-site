@@ -76,6 +76,19 @@
     cursor: pointer;
   }
 
+  .site-name {
+    display: inline-block;
+    background-color: #222;
+    color: #90caf9;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+
   /* Sections */
   section {
     margin-bottom: 2rem;
@@ -316,6 +329,34 @@
     opacity: 1;
   }
 
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+  }
+  
+  .sticky-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .sticky-nav a {
+    color: #90caf9;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+  }
+  
+  .sticky-nav a:hover {
+    color: #ffffff;
+  }
+  
+
   /* Fade-in Effect for Sections */
   .fade-in-element {
     opacity: 0;
@@ -351,3 +392,37 @@
     opacity: 1;
     transform: scale(1);
   }
+
+  .edit-mode [data-editable] {
+    outline: 1px dashed #90caf9;
+    cursor: text;
+  }
+
+
+  /* Blog post styles*/
+  
+  .post-card h3 {
+    color: #90caf9;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-card p {
+    font-weight: 300;
+    color: #ccc;
+  }
+  
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  }
+  

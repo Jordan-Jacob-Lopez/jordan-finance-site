@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Blog – Jordan's Financial Guide</title>
+</head>
+<body>
+  <header>
+    <h1 class="hero-title">Financial Blog</h1>
+    <p class="hero-subtitle">Sharing practical insights, rants, and useful stuff</p>
+    <a href="main.html" class="hero-button">← Back to Main</a>
+  </header>
+
+  <main>
+    <section id="blog-controls" style="margin-bottom: 2rem;">
+      <!-- New Post Button (admin-only) -->
+      <button id="newPostBtn" class="hero-button" style="display: none;">➕ New Post</button>
+    </section>
+
+    <section id="blog-posts" class="blog-posts">
+      <!-- Blog posts will be loaded here from posts.json -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
