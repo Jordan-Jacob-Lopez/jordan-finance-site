@@ -2,212 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jordan’s Financial Guide</title>
+  <title>The Basics – Jordan’s Financial Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="sticky-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#financial-literacy" class="spy-link">Financial Literacy</a></li>
-      <li><a href="#good-financial-topics" class="spy-link">Good Ideas</a></li>
-      <li><a href="#dumb-financial-moves" class="spy-link">Terrible Ideas</a></li>
-      <li><a href="#retirement-hacks" class="spy-link">Tax-Advantaged</a></li>
-      <li><a href="#making-money-early" class="spy-link">Making Money Early</a></li>
-      <li><a href="#investing-in-markets" class="spy-link">Markets</a></li>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About Me</a></li>
     </ul>
   </nav>
-      <div class="nav-backdrop" id="navBackdrop"></div>
-  <header>
-    <h1>The Basics</h1>
-  </header>
 
-<main role="main">
-    <section id="financial-literacy" class="section-wrapper fade-in-element">
-        <div class="section-text">
-            <h2>Financial Literacy</h2>
-            <p> 
-                lit·er·a·cy
-                <br>
-                noun
-                <br>
-                competence or knowledge in a specified area.
-                <br>
-                <br>
-                fi·nan·cial
-                <br>
-                adjective
-                <br>
-                relating to money and finance.
-                <br>
-                <br>
-                Its important every person has some sort of financial literacy. You don't need to spend days deep diving into complex research, but you
-                also can't afford to be making thousands of dollars per year and have no clue what is happening with your money.
-                Like any subject, everyone has their own interests into how far they're willing to go into a subject. Without going into too much details,
-                the next sections should share some details of some fairly important financial topics that I think would be the first things anyone should know
-                about their money.
-            </p>
-        </div>
+  <main class="basics-page">
+    <header class="hero-content">
+      <h1 class="hero-title">The Basics</h1>
+      <p class="hero-subtitle">Foundational concepts to build your financial literacy</p>
+    </header>
 
-        <div class="section-graphic">
-            <div class="tenor-gif-embed" data-postid="18403902488285786738" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/pengu-pudgy-penguin-pudgypenguins-money-gif-18403902488285786738">Pengu Pudgy Sticker</a>from <a href="https://tenor.com/search/pengu-stickers">Pengu Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        </div>
+    <section class="tile-grid">
+      <div class="tile" onclick="openModal('modal-literacy')">
+        <h3>What is Financial Literacy?</h3>
+        <p>A quick intro to managing, saving, and growing your money</p>
+      </div>
+      <div class="tile" onclick="openModal('modal-early')">
+        <h3>Making Money Early</h3>
+        <p>Why starting young pays off big later</p>
+      </div>
+      <div class="tile" onclick="openModal('modal-dumb')">
+        <h3>Dumbest Money Moves</h3>
+        <p>What to absolutely avoid with your money</p>
+      </div>
+      <div class="tile" onclick="openModal('modal-smart')">
+        <h3>Smart Money Moves</h3>
+        <p>Simple, smart strategies to build wealth</p>
+      </div>
+      <div class="tile" onclick="openModal('modal-tax')">
+        <h3>Tax-Advantaged Accounts</h3>
+        <p>401(k)s, Roth IRAs, HSAs — decoded</p>
+      </div>
+      <div class="tile" onclick="openModal('modal-markets')">
+        <h3>Markets Are Insane</h3>
+        <p>How to not lose your mind or money in them</p>
+      </div>
+    </section>
+  </main>
 
-      </section>
-      
-     <section id="good-financial-topics" class="section-wrapper fade-in-element reverse">
-        <div class="section-text">
-          <h2>Some Generally Smart Things You Should Do</h2>
-          <p>Financial literacy is your ability to understand and use money-related skills like budgeting, saving, investing, and managing debt.
-             Think of it as your personal toolkit for making smarter decisions with your money—now and long term. How deeply you understand the variables
-            which impact your finances is up to you however I would argue there is a base level of understanding which everyone should strive for. The most
-            important thing I would say is being able to understand enough which will allow you to implement financially healthy habits. If I knew absolutely nothing about finances
-            here are the things I would begin learning more about
-            </p>
-            <ul>
-                <li>Understanding your financial habits - where does your money go each paycheck</li>
-                
-                <li>Creating some objective goals for getting to a better financial version of yourself</li>
-                
-                <li>Paying off high interest debt</li>
-                
-                <li>Understanding the different ways to save money</li>
-            </ul>
-        </div>
+    <!-- Modals -->
+    <div id="modal-literacy" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-literacy')">&times;</span>
+      <h2>What is Financial Literacy?</h2>
+      <p data-editable>Financial literacy is understanding how to manage your money — budgeting, saving, investing, and avoiding debt traps. It’s what lets you make smart, confident decisions with your cash.</p>
+      <p data-editable> 
+        lit·er·a·cy
+        <br>
+        noun
+        <br>
+        competence or knowledge in a specified area.
+        <br>
+        <br>
+        fi·nan·cial
+        <br>
+        adjective
+        <br>
+        relating to money and finance.
+        <br>
+        <br>
+        Its important every person has some sort of financial literacy. You don't need to spend days deep diving into complex research, but you
+        also can't afford to be making thousands of dollars per year and have no clue what is happening with your money.
+        Like any subject, everyone has their own interests into how far they're willing to go into a subject. Without going into too much details,
+        the next sections should share some details of some fairly important financial topics that I think would be the first things anyone should know
+        about their money.
+    </p>
+</div>
 
-        <div class="section-graphic">
-            <img src="images/guy-being-smart-with-money.svg" alt="man doing a lot financial planning" class="section-image fade-in-element" loading="lazy" />
-        </div>
-     </section>
-    
-     <section id= "dumb-financial-moves" class="section-wrapper fade-in-element">
-        <div class="section-text">
-          <h2>Absolute worst things you could do </h2>
-          <p> I would argue that for every good financial move you can make, there are at least 10 bad ones. There are so many bad ideas out there that I think if I where
-            to list them all, I would need a book. My goal is to borderline traumatize you some of the horrors wallstreet has to offer in hopes that you don't put yourself
-            in a position that would burn your money. I promise you, if you really don't know what you're doing all it takes is a couple of button clicks to get yourself in some complex and risky position and it would be
-            <strong>much</strong>
-            harder to try and put gasoline on a pile of money and burning it than it would be to just click a few buttons and lose it all.
+    </div>
+
+    <div id="modal-early" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-early')">&times;</span>
+      <h2>The Importance of Making Money Early</h2>
+      <p data-editable>Time is your best asset. The earlier you start earning and investing, the more compound growth works in your favor.</p>
+      <p data-editable>
+        When people talk about "making your money work for you" this is what they mean. The earlier you start saving and investing, the more time compound interest has to do its thing.
+      </p>
+      <p data-editable>
+        Let’s say you’ve built up a $1 million investment portfolio that earns around 6% annually. That’s $60,000 a year in growth alone without doing much beyond ensuring your investments don't go against you. If you're living simply, that could fully cover your lifestyle. Even if not, that’s serious financial cushion.
+      </p>
+      <p data-editable>
+        Now, getting to $1 million might sound wild but here's an example that might help put it into perspective:
+      </p>
+      <br>
+      <ul>
+        <li>If you are making around $100,000 a year and manage to save $20,000 of it annually…</li>
+        
+        <li>And you consistently invest that $20,000 into a portfolio earning 6%…</li>
+        
+        <li>You’ll hit $1 million in about 25 years.</li>
+      </ul>
+      <br>
+      <p data-editable>
+        That’s not a lottery win... that’s just steady saving, smart investing, and time. Start in your 20s and you could reach that goal before 50. Start in your 30s and you're still set up for a powerful financial future. 
+      </p>
+      <p data-editable>
+        <br>
+        Now, I know not everyone can manage their financial situation to save 20% of their after tax salary and that this example is over simplifying a lot things. 
+        What I hope to convey with the above is one of the great things about financial literacy. The more you learn, strategize, and set objective financial goals,
+         the more you can optimize your financial situation to be able to save and invest more. The key is to start early and be consistent.
+        Additionally, <strong>Making money early matters not because you need to be rich by 30 </strong> — but because time is your greatest asset, and money made young has the most time to grow.
+      </p>
+      <div class="section-graphic">
+        <video autoplay muted loop playsinline>
+          <source src="videos/investment_growth_animation.mp4"  type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      </div>
+
+    </div>
+
+    <div id="modal-dumb" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-dumb')">&times;</span>
+      <h2>The Dumbest Things You Could Do With Your Money</h2>
+      <p data-editable>Buying liabilities you can’t afford. Living paycheck to paycheck by choice. Ignoring your future self.</p>
+      <p data-editable> I would argue that for every good financial move you can make, there are at least 10 bad ones. There are so many bad ideas out there that I think if I where
+        to list them all, I would need a book. My goal is to borderline traumatize you some of the horrors wallstreet has to offer in hopes that you don't put yourself
+        in a position that would burn your money. I promise you, if you really don't know what you're doing all it takes is a couple of button clicks to get yourself in some complex and risky position and it would be
+        <strong>much</strong>
+        harder to try and put gasoline on a pile of money and burning it than it would be to just click a few buttons and lose it all.
+        
+        Here are some horrendously bad ideas that should be avoided like the plague ranked subjectively from <strong>BAD</strong> to <strong>WORST</strong>.</p>
+
+        <ul>
             
-            Here are some horrendously bad ideas that should be avoided like the plague ranked subjectively from <strong>BAD</strong> to <strong>WORST</strong>.</p>
-
-            <ul>
-                
-                <li>Not paying off your credit cards each month</li>
-                
-                <li>Utilizing leverage without any understanding or safe guards in place</li>
-                
-                <li>Investing in a financial instrument without having a single clue of the underlying asset</li>
-                
-                <li>Jumping into debt without recognizing a plan to payoff the debt</li>
-            </ul>
-        </div>
-
-        <div class="section-graphic">
-            <img src="images/actually-burning-money.gif" alt="gif of burning money with 0DTE options as caption" class="section-image fade-in-element" loading="lazy" />
-        </div>
-
-    </section>
-
-    <section id="retirement-hacks" class="section-wrapper fade-in-element reverse">
-        <div class="section-text">
-          <h2>Tax-Advantaged Accounts: One of the biggest financial hacks that will elevate your financial health</h2>
-          <p>
-            Tax-advantaged accounts are like secret weapons for your money. They let you save and invest while paying less in taxes, which means more money stays in your pocket.
-            It's criminal how poor financial literacy is in the US, and how many people don't know about these accounts. There are a few main types that everyone should know about:
-            <br>
-            <br>
-            <ul>
-                <li>Individual Retirement Accounts (Traditional IRAs and Roth IRAs)</li>
-                
-                <li>Employer sponsored plans (Traditional or Roth 401(k), 403(b), 457(b))</li>
-                
-                <li>Other savings accounts (Health, Education, etc.)</li>
-            </ul>
+            <li>Not paying off your credit cards each month</li>
             
-        </p>
-
-            <p>
-                These accounts let you save money for retirement or other goals while getting tax breaks. 
-            </p>
-            <p>
-                The key is to start using these accounts as early as possible. The earlier you start saving and investing in them,
-                 the more time your money has to grow. Plus, the tax benefits can add up significantly over time.
-            </p>
-        </div>
-
-        <div class="section-graphic">
-            <img src="images/Taxes-money-img.svg" alt="bag of money with taxes behind it" class="section-image fade-in-element" loading="lazy" />
-        </div>
-
-    </section>
-
-    <section id="making-money-early" class="section-wrapper fade-in-element">
-        <div class="section-text">
-          <h2>Why Making Money Early Actually Matters</h2>
-          <p>
-            When people talk about "making your money work for you" this is what they mean. The earlier you start saving and investing, the more time compound interest has to do its thing.
-          </p>
-          <p>
-            Let’s say you’ve built up a $1 million investment portfolio that earns around 6% annually. That’s $60,000 a year in growth alone without doing much beyond ensuring your investments don't go against you. If you're living simply, that could fully cover your lifestyle. Even if not, that’s serious financial cushion.
-          </p>
-          <p>
-            Now, getting to $1 million might sound wild but here's an example that might help put it into perspective:
-          </p>
-          <br>
-          <ul>
-            <li>If you are making around $100,000 a year and manage to save $20,000 of it annually…</li>
+            <li>Utilizing leverage without any understanding or safe guards in place</li>
             
-            <li>And you consistently invest that $20,000 into a portfolio earning 6%…</li>
+            <li>Investing in a financial instrument without having a single clue of the underlying asset</li>
             
-            <li>You’ll hit $1 million in about 25 years.</li>
-          </ul>
-          <br>
-          <p>
-            That’s not a lottery win... that’s just steady saving, smart investing, and time. Start in your 20s and you could reach that goal before 50. Start in your 30s and you're still set up for a powerful financial future. 
-          </p>
-          <p>
-            <br>
-            Now, I know not everyone can manage their financial situation to save 20% of their after tax salary and that this example is over simplifying a lot things. 
-            What I hope to convey with the above is one of the great things about financial literacy. The more you learn, strategize, and set objective financial goals,
-             the more you can optimize your financial situation to be able to save and invest more. The key is to start early and be consistent.
-            Additionally, <strong>Making money early matters not because you need to be rich by 30 </strong> — but because time is your greatest asset, and money made young has the most time to grow.
-          </p>
+            <li>Jumping into debt without recognizing a plan to payoff the debt</li>
+        </ul>
         </div>
+    </div>
 
-        <div class="section-graphic">
-          <video autoplay muted loop playsinline>
-            <source src="videos/investment_growth_animation.mp4"  type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-    </section>
+    <div id="modal-smart" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-smart')">&times;</span>
+      <h2>Generally Smart Things You Could Do With Your Money</h2>
+      <p data-editable>Live below your means. Invest consistently. Educate yourself. Ask questions.</p>
+      <p data-editable>Financial literacy is your ability to understand and use money-related skills like budgeting, saving, investing, and managing debt.
+        Think of it as your personal toolkit for making smarter decisions with your money—now and long term. How deeply you understand the variables
+       which impact your finances is up to you however I would argue there is a base level of understanding which everyone should strive for. The most
+       important thing I would say is being able to understand enough which will allow you to implement financially healthy habits. If I knew absolutely nothing about finances
+       here are the things I would begin learning more about
+       </p>
+       <ul>
+           <li>Understanding your financial habits - where does your money go each paycheck</li>
+           
+           <li>Creating some objective goals for getting to a better financial version of yourself</li>
+           
+           <li>Paying off high interest debt</li>
+           
+           <li>Understanding the different ways to save money</li>
+       </ul>
+       </div>
+    </div>
+
+    <div id="modal-tax" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-tax')">&times;</span>
+      <h2>Tax-Advantaged Accounts</h2>
+      <p data-editable>Use tools like Roth IRAs, 401(k)s, and HSAs to save money on taxes while you grow wealth.</p>
+      <p data-editable>
+        Tax-advantaged accounts are like secret weapons for your money. They let you save and invest while paying less in taxes, which means more money stays in your pocket.
+        It's criminal how poor financial literacy is in the US, and how many people don't know about these accounts. There are a few main types that everyone should know about:
+        <br>
+        <br>
+        <ul>
+            <li>Individual Retirement Accounts (Traditional IRAs and Roth IRAs)</li>
+            
+            <li>Employer sponsored plans (Traditional or Roth 401(k), 403(b), 457(b))</li>
+            
+            <li>Other savings accounts (Health, Education, etc.)</li>
+        </ul>
+      </p>
+      <p data-editable>
+            These accounts let you save money for retirement or other goals while getting tax breaks. 
+      </p>
+      <p data-editable>
+            The key is to start using these accounts as early as possible. The earlier you start saving and investing in them,
+             the more time your money has to grow. Plus, the tax benefits can add up significantly over time.
+      </p>
+      </div>
+    </div>
+
+    <div id="modal-markets" class="modal"><div class="modal-content"><span class = "close" onclick="closeModal('modal-markets')">&times;</span>
+      <h2>Markets Are Insane, Don't Be Stupid</h2>
+      <p data-editable>Markets move fast. Stay patient. Avoid FOMO. Zoom out. Think long-term.</p>
+      <p data-editable>Pretty self explanatory... Stick to some basic ideas and not only will you be saving money, but you will also be passively receiving interest.
+        We live in an age where its never been easier to access various ways to save and invest your money. The problem is we also live in an age where its so easy to 
+        spend money and lose it. There are so many options out there that it can be overwhelming, and the financial industry doesn't make it any easier.
+      </p>
+      <div class="section-graphic">
+        <img src="images/patience-is-key.gif" alt="gif of spongebob waiting" class="section-image" loading="lazy" />
+      </div>
+      </div>
+    </div>
 
 
-    <section id="investing-in-markets" class="section-wrapper fade-in-element reverse">
-        <div class="section-text">
-          <h2>Markets Can Be Crazy. Don’t Be Stupid.</h2>
-          <p>Pretty self explanatory... Stick to some basic ideas and not only will you be saving money, but you will also be passively receiving interest.
-            We live in an age where its never been easier to access various ways to save and invest your money. The problem is we also live in an age where its so easy to 
-            spend money and lose it. There are so many options out there that it can be overwhelming, and the financial industry doesn't make it any easier.
-          </p>
-        </div>
+  <footer>
+    <p>&copy; 2025 Jordan Lopez. All rights reserved.</p>
+  </footer>
 
-        <div class="section-graphic">
-          <img src="images/patience-is-key.gif" alt="gif of spongebob waiting" class="section-image fade-in-element" loading="lazy" />
-        </div>
-    </section>
-
-    <section id="purpose" class="section-wrapper">
-        <div class="section-text">
-          <h2>Why This Site Exists</h2>
-          <p>Personal finance shouldn’t feel overwhelming. I want this site to help keep track of basic ideas and share with my friends/family who have not put as much interest or consideration
-            into their financial well being. As I learn more things through videos and articles I hope to be able to encourage financial literacy to everyone.</p>
-        </div>
-    </section>
-</main>
-
-  <script src="script.js"></script>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </body>
 </html>
