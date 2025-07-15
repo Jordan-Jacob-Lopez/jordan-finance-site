@@ -95,12 +95,17 @@ if (navToggle && navMenu && navBackdrop) {
     });
   });
 }
-// === Blog Page Script ===
+
+// === Generate JSON blog for new posts ===
+
+let currentPostData = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("blog.html")) {
     fetch("posts.json")
       .then(res => res.json())
       .then(data => {
+        currentPostData = [...data]; // stores existing posts
         const blogSection = document.getElementById("blog-posts");
         if (!blogSection) return;
 
@@ -110,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
           article.innerHTML = `
             <h3 id="${post.id}-title" data-editable>${post.title}</h3>
             <p id="${post.id}-snippet" data-editable>${post.snippet}</p>
-            <a href="blog-post.html#${post.id}" class="hero-button" style="margin-top: 0.75rem; display:inline-block;">Read More →</a>
+            <a href="blog-post.html#${post.id}" class="hero-button" style="margin-top: 0.75rem;">Read More →</a>
           `;
           blogSection.appendChild(article);
         });
@@ -119,17 +124,25 @@ document.addEventListener("DOMContentLoaded", () => {
           enableEditableContent();
         }
       });
-  // === Add (admin mode) Post Button on blog.html ===
+
+    // === New Post + Download JSON in Admin Mode ===
     if (window.location.search.includes("editmode=true")) {
-      const btn = document.getElementById('newPostBtn');
-      if (btn) {
-        btn.style.display = 'inline-block';
-        btn.addEventListener('click', () => {
+      const newBtn = document.getElementById('newPostBtn');
+      const dlBtn = document.getElementById('downloadJsonBtn');
+
+      if (newBtn) {
+        newBtn.style.display = 'inline-block';
+        newBtn.addEventListener('click', () => {
           const id = "post-" + Date.now();
           const title = prompt("Enter blog post title:");
           const snippet = prompt("Enter blog snippet or teaser:");
+          const body = prompt("Enter full post content:");
+          if (!body) return;
           if (!title || !snippet) return;
-          const blogSection = document.getElementById('blog-posts');
+
+          const post = { id, title, snippet, body };
+          currentPostData.unshift(post); // ➕ Add to the stored data
+
           const article = document.createElement('article');
           article.classList.add('post-card');
           article.innerHTML = `
@@ -137,13 +150,31 @@ document.addEventListener("DOMContentLoaded", () => {
             <p id="${id}-snippet" data-editable>${snippet}</p>
             <a href="blog-post.html#${id}" class="hero-button" style="margin-top: 0.75rem;">Read More →</a>
           `;
-          blogSection.prepend(article);
+          document.getElementById('blog-posts').prepend(article);
           enableEditableContent?.();
+          showToast("⚠️ Post saved locally. Download posts.json to save permanently.");
+        });
+      }
+
+      if (dlBtn) {
+        dlBtn.style.display = 'inline-block';
+        dlBtn.addEventListener('click', () => {
+          const blob = new Blob([JSON.stringify(currentPostData, null, 2)], { type: "application/json" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "posts.json";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+          showToast("💾 posts.json downloaded");
         });
       }
     }
   }
 });
+
 
 // === Load Single Post by URL Hash ===
 document.addEventListener("DOMContentLoaded", () => {
@@ -155,10 +186,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
         const post = data.find(p => p.id === postId);
+        console.log("Loaded post:", post);
         if (!post) return;
 
         document.getElementById("post-title").innerText = post.title;
         document.getElementById("post-snippet").innerText = post.snippet;
+        document.getElementById("post-body").innerText = post.body;
       });
 
     if (window.location.search.includes("editmode=true")) {
@@ -167,3 +200,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// === Toast function for fadding in and out ===
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.innerText = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
+}

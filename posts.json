@@ -1,17 +1,14 @@
 [
   {
+    "id": "post-1752548813485",
+    "title": "Test 1",
+    "snippet": "Test Teaser",
+    "body": "Test blog content"
+  },
+  {
     "id": "post-001",
     "title": "Why Most Budgeting Apps Suck",
-    "snippet": "I've tried every app from Mint to YNAB. Here's what actually works."
-  },
-  {
-    "id": "post-002",
-    "title": "How to Retire at 40",
-    "snippet": "Yes, it's possible. But it requires brutal honesty and great habits."
-  },
-  {
-    "id": "post-003",
-    "title": "Roth IRA vs 401(k)",
-    "snippet": "Understanding which account fits your lifestyle could save you thousands."
+    "snippet": "I've tried every app from Mint to YNAB. Here's what actually works.",
+    "body": "After years of testing budgeting apps, I've found that most fail to address the real needs of users. They either overcomplicate the process or don't provide enough insight into spending habits. The key is simplicity and actionable insights. Apps that focus on these aspects tend to be more effective in helping users manage their finances."
   }
 ]
