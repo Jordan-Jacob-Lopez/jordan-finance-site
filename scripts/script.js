@@ -52,7 +52,7 @@ function enableEditableContent() {
 // === Load Recent Blog Posts on main.html ===
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("main.html")) {
-    fetch("posts.json")
+    fetch("blog/posts.json")
       .then(res => res.json())
       .then(data => {
         const recentPostsContainer = document.getElementById("recent-posts");
@@ -102,7 +102,7 @@ let currentPostData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("blog.html")) {
-    fetch("posts.json")
+    fetch("blog/posts.json")
       .then(res => res.json())
       .then(data => {
         currentPostData = [...data]; // stores existing posts
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postId = window.location.hash?.substring(1);
 
   if (isPostPage && postId) {
-    fetch("posts.json")
+    fetch("blog/posts.json")
       .then(res => res.json())
       .then(data => {
         const post = data.find(p => p.id === postId);
