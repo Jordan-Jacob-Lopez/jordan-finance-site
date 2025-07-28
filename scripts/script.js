@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
           article.innerHTML = `
             <h3 id="${post.id}-title" data-editable>${post.title}</h3>
             <p id="${post.id}-snippet" data-editable>${post.snippet}</p>
-            <a href="blog-post.html#${post.id}" class="hero-button" style="margin-top: 0.75rem;">Read More →</a>
+            <a href="blog-post.html#${post.id}" class="cta-button" style="margin-top: 0.75rem;">Read More →</a>
           `;
           blogSection.appendChild(article);
         });
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
           article.innerHTML = `
             <h3 id="${id}-title" data-editable>${title}</h3>
             <p id="${id}-snippet" data-editable>${snippet}</p>
-            <a href="blog-post.html#${id}" class="hero-button" style="margin-top: 0.75rem;">Read More →</a>
+            <a href="blog-post.html#${id}" class="cta-button" style="margin-top: 0.75rem;">Read More →</a>
           `;
           document.getElementById('blog-posts').prepend(article);
           enableEditableContent?.();
@@ -211,3 +211,42 @@ function showToast(message) {
     toast.classList.remove('show');
   }, 2500);
 }
+
+// Add .js class to <html> so CSS only activates if JS is running
+document.documentElement.classList.add('js');
+
+// Fade in on load
+window.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.page-transition');
+  if (wrapper) {
+    // Delay just a hair to let CSS apply
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        wrapper.classList.add('loaded');
+    });
+  });
+  }
+});
+
+// Fade out before navigating
+document.querySelectorAll('a[href]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    const wrapper = document.querySelector('.page-transition');
+
+    const shouldIgnore = (
+      !href ||
+      href.startsWith('#') ||
+      link.target ||
+      link.hasAttribute('download')
+    );
+
+    if (!wrapper || shouldIgnore) return;
+
+    e.preventDefault();
+    wrapper.classList.remove('loaded');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300); // match the CSS transition time
+  });
+});
