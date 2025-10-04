@@ -439,6 +439,64 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* === Blog Admin Modal === */
+#adminBlogModal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#adminBlogModal .modal-content {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#adminBlogModal label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+#adminBlogModal input,
+#adminBlogModal textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+#adminBlogModal button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  background-color: #86d898;
+  border: none;
+  color: #121212;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#adminBlogModal button:hover {
+  background-color: #ffffff;
+}
+
+
 /* Grid layout for The Basics */
 .tile-grid {
   display: grid;

@@ -1,5 +1,11 @@
 [
   {
+    "id": "post-1759608457526",
+    "title": "Test Title",
+    "snippet": "Test modal",
+    "body": "testing again we don't have undefined id"
+  },
+  {
     "id": "post-1752810729081",
     "title": "carlos leaves tomorrow",
     "snippet": "test 1 ",

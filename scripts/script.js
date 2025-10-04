@@ -32,8 +32,8 @@ window.addEventListener('scroll', () => {
 });
 
 // === Edit Mode Toggle via URL ===
-const isAdmin = window.location.search.includes("editmode=true");
-if (isAdmin) document.body.classList.add("edit-mode");
+const isAdminEdit = window.location.search.includes("editmode=true");
+if (isAdminEdit) document.body.classList.add("edit-mode");
 
 // === Make [data-editable] Elements Editable ===
 function enableEditableContent() {
@@ -96,8 +96,7 @@ if (navToggle && navMenu && navBackdrop) {
   });
 }
 
-// === Generate JSON blog for new posts ===
-
+// === Load Blog Posts on blog.html ===
 let currentPostData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -105,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("blog/posts.json")
       .then(res => res.json())
       .then(data => {
-        currentPostData = [...data]; // stores existing posts
+        currentPostData = [...data];
         const blogSection = document.getElementById("blog-posts");
         if (!blogSection) return;
 
@@ -125,37 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-    // === New Post + Download JSON in Admin Mode ===
+    // Admin Download Button
     if (window.location.search.includes("editmode=true")) {
-      const newBtn = document.getElementById('newPostBtn');
       const dlBtn = document.getElementById('downloadJsonBtn');
-
-      if (newBtn) {
-        newBtn.style.display = 'inline-block';
-        newBtn.addEventListener('click', () => {
-          const id = "post-" + Date.now();
-          const title = prompt("Enter blog post title:");
-          const snippet = prompt("Enter blog snippet or teaser:");
-          const body = prompt("Enter full post content:");
-          if (!body) return;
-          if (!title || !snippet) return;
-
-          const post = { id, title, snippet, body };
-          currentPostData.unshift(post); // ➕ Add to the stored data
-
-          const article = document.createElement('article');
-          article.classList.add('post-card');
-          article.innerHTML = `
-            <h3 id="${id}-title" data-editable>${title}</h3>
-            <p id="${id}-snippet" data-editable>${snippet}</p>
-            <a href="blog-post.html#${id}" class="cta-button" style="margin-top: 0.75rem;">Read More →</a>
-          `;
-          document.getElementById('blog-posts').prepend(article);
-          enableEditableContent?.();
-          showToast("⚠️ Post saved locally. Download posts.json to save permanently.");
-        });
-      }
-
       if (dlBtn) {
         dlBtn.style.display = 'inline-block';
         dlBtn.addEventListener('click', () => {
@@ -175,8 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-// === Load Single Post by URL Hash ===
+// === Load Individual Blog Post (blog-post.html) ===
 document.addEventListener("DOMContentLoaded", () => {
   const isPostPage = window.location.pathname.includes("blog-post.html");
   const postId = window.location.hash?.substring(1);
@@ -186,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => {
         const post = data.find(p => p.id === postId);
-        console.log("Loaded post:", post);
         if (!post) return;
 
         document.getElementById("post-title").innerText = post.title;
@@ -201,8 +170,44 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// === Toast function for fadding in and out ===
+// === Admin Modal Blog Creation ===
+function openModal() {
+  document.getElementById('adminBlogModal').style.display = 'flex';
+}
 
+function closeModal() {
+  document.getElementById('adminBlogModal').style.display = 'none';
+}
+
+function downloadPostJson() {
+  const title = document.getElementById('blogTitle').value;
+  const snippet = document.getElementById('blogSnippet').value;
+  const body = document.getElementById('blogBody').value;
+
+  const id = `post-${Date.now()}`; // simple unique ID based on timestamp
+  const post = { id, title, snippet, body };
+
+  currentPostData.unshift(post);
+
+  const blob = new Blob([JSON.stringify(currentPostData, null, 2)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = "posts.json";
+  link.click();
+
+  showToast("✅ Full posts.json updated and downloaded!");
+}
+
+
+
+// Auto-open blog modal if ?admin=true
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.search.includes('admin=true')) {
+    openModal();
+  }
+});
+
+// === Toast Notifications ===
 function showToast(message) {
   const toast = document.getElementById('toast');
   toast.innerText = message;
@@ -212,23 +217,19 @@ function showToast(message) {
   }, 2500);
 }
 
-// Add .js class to <html> so CSS only activates if JS is running
+// === Smooth Page Transitions ===
 document.documentElement.classList.add('js');
-
-// Fade in on load
 window.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.page-transition');
   if (wrapper) {
-    // Delay just a hair to let CSS apply
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         wrapper.classList.add('loaded');
+      });
     });
-  });
   }
 });
 
-// Fade out before navigating
 document.querySelectorAll('a[href]').forEach(link => {
   link.addEventListener('click', e => {
     const href = link.getAttribute('href');
@@ -247,6 +248,6 @@ document.querySelectorAll('a[href]').forEach(link => {
     wrapper.classList.remove('loaded');
     setTimeout(() => {
       window.location.href = href;
-    }, 300); // match the CSS transition time
+    }, 300);
   });
 });
