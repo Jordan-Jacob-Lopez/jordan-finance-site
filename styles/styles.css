@@ -274,6 +274,12 @@ h2 {
 
 /* === Heatmap Styles === */
 
+.heatmap-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
 .heatmap-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
